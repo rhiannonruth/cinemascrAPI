@@ -1,11 +1,11 @@
-module Api
-  module V1
-    class CinemasController < ApplicationController
+class Api::V1::CinemasController < ApplicationController
 
-      def index
-
-      end
-
-    end
+  def index
+    render nothing:true
   end
+
+  def show
+    render nothing:true
+  end
+  
 end
