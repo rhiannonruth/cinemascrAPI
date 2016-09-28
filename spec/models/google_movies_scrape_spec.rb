@@ -11,6 +11,14 @@ RSpec.describe GoogleMoviesScrape, type: :model do
   end
 
   describe "#search_cinemas" do
+    before do
+      london_search_page = File.read("./spec/fixtures/GoogleMoviesLondonSearch.html")
+      FakeWeb.register_uri(:get,
+                           "https://www.google.com/movies?near=London",
+                           body: london_search_page,
+                           content_type: "text/html")
+    end
+
     it "returns hash" do
       response = scraper.search_cinemas("London")
       expect(response).to be_a Hash
