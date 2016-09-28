@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe GoogleMoviesScrape, type: :model do
 
-  let!(:scraper){ GoogleMoviesScrape.new }
+  let!(:scraper){ described_class.new }
 
   describe "#initialize" do
     it "creates a mechanize agent on init" do
