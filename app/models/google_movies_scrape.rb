@@ -14,8 +14,8 @@ class GoogleMoviesScrape
   private
 
   def get_cinema_names(page)
-    page.search('.movie_results').search('.theater').search('.desc').search('.name').map do |a|
-      a.text
+    page.search('.movie_results').search('.theater').search('.desc').search('.name').map do |name|
+      name.text
     end
   end
 
