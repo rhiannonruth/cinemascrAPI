@@ -9,7 +9,7 @@ class Api::V1::CinemasController < ApplicationController
   end
 
   def search
-    render nothing:true
+    render json:{cinemas:[]}
   end
 
 end
