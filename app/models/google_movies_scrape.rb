@@ -1,4 +1,2 @@
 class GoogleMoviesScrape
-
-  
 end
