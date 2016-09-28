@@ -37,6 +37,7 @@ group :development, :test do
   gem 'byebug'
   gem 'httparty'
   gem 'rspec-rails'
+  gem 'nokogiri'
   gem 'mechanize'
 end
 

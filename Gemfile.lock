@@ -193,6 +193,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mechanize
+  nokogiri
   rails (= 4.2.6)
   rspec-rails
   sass-rails (~> 5.0)
@@ -204,4 +205,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.12.5
+   1.13.1
