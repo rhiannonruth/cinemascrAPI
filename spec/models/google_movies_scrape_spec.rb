@@ -12,7 +12,7 @@ RSpec.describe GoogleMoviesScrape, type: :model do
 
   context "scraping" do
     it "returns an array" do
-      response = scraper.search_cinemas("postcode")
+      response = scraper.search_cinemas("London")
       expect(response).to be_a Hash
     end
   end
