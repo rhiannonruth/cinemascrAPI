@@ -7,7 +7,7 @@ class GoogleMoviesScrape
   end
 
   def search_cinemas(location)
-    page = agent.get("https://www.google.com/movies?near=#{location}")
+    page = agent.get("http://www.google.com/movies?near=#{location}")
     { cinemas: get_cinema_names(page) }
   end
 

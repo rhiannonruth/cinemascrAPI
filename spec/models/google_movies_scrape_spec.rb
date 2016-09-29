@@ -14,7 +14,7 @@ RSpec.describe GoogleMoviesScrape, type: :model do
     before do
       london_search_page = File.read("./spec/fixtures/GoogleMoviesLondonSearch.html")
       FakeWeb.register_uri(:get,
-                           "https://www.google.com/movies?near=London",
+                           "http://www.google.com/movies?near=London",
                            body: london_search_page,
                            content_type: "text/html")
     end
