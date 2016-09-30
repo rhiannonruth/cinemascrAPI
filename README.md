@@ -1,6 +1,8 @@
 ## cinemascrAPI
 
-cinemascrAPI is an API that screenscrapes google.com/movies and returns cinemas and film listings based on a postcode search. 
+[![Build Status](https://travis-ci.org/rhiannonruth/cinemascrAPI.svg?branch=travis)](https://travis-ci.org/rhiannonruth/cinemascrAPI)
+
+cinemascrAPI is an API that screenscrapes google.com/movies and returns cinemas and film listings based on a postcode search.
 
 #### Authors
 - [Rhiannon Lolley Neville](https://github.com/rhiannonruth)
