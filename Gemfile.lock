@@ -98,6 +98,7 @@ GEM
       pkg-config (~> 1.1.7)
     ntlm-http (0.1.1)
     pkg-config (1.1.7)
+    puma (3.6.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -196,6 +197,7 @@ DEPENDENCIES
   jquery-rails
   mechanize
   nokogiri
+  puma
   rails (= 4.2.6)
   rspec-rails
   sass-rails (~> 5.0)
