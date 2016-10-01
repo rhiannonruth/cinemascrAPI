@@ -26,9 +26,10 @@ class GoogleMoviesScrape
   end
 
   def extract_movies_list(cinema)
-    cinema.search('.showtimes').search('.name').map do |movie|
-      movie.text
+    cinema.search('.showtimes').search('.movie').map do |movie|
+      name = movie.search('.name')
+      showtimes = movie.search('.times').text.gsub(' &nbsp',' ').split(' ')
+      Movie.new(name: name.text, showtimes:[showtimes])
     end
   end
-
 end
