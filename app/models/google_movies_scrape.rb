@@ -29,7 +29,7 @@ class GoogleMoviesScrape
     cinema.search('.showtimes').search('.movie').map do |movie|
       name = movie.search('.name')
       showtimes = movie.search('.times').text.gsub(' &nbsp',' ').split(' ')
-      Movie.new(name: name.text, showtimes:[showtimes])
+      Movie.new(name: name.text, showtimes:showtimes)
     end
   end
 end
