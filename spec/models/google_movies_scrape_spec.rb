@@ -25,7 +25,7 @@ RSpec.describe GoogleMoviesScrape, type: :model do
     end
 
     it "cinemas key is an array of cinema objects" do
-      expect(@response[:cinemas].all? {|x| x.class == Cinema }).to be true
+      expect(@response[:cinemas]).to all(be_a Cinema)
     end
 
     it "movies within cinemas are an array" do
