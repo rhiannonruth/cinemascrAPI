@@ -16,4 +16,7 @@
 !/log/.keep
 /tmp
 
+# Ignore coveralls coverage folder
+/coverage
+
 /.byebug_history
