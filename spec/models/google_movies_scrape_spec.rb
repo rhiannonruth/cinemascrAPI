@@ -25,22 +25,35 @@ RSpec.describe GoogleMoviesScrape, type: :model do
       expect(@response).to be_a Hash
     end
 
-    it "cinemas key is an array of cinema objects" do
-      expect(@response[:cinemas]).to all(be_a Cinema)
+    context "cinema objects" do
+
+      it "cinemas key is an array of cinema objects" do
+        expect(@response[:cinemas]).to all(be_a Cinema)
+      end
+
+      it "first cinema object has expected name" do
+        expect(@first_cinema.name).to eq "ICA Cinema"
+      end
+
     end
 
-    it "first cinema object has expected name" do
-      expect(@first_cinema.name).to eq "ICA Cinema"
-    end
+    context "movie objects" do
 
-    it "movies key is an array of movie objects" do
-      first_cinema_movies = @first_cinema.movies
-      expect(first_cinema_movies).to all(be_a Movie)
-    end
+      it "movies key is an array of movie objects" do
+        first_cinema_movies = @first_cinema.movies
+        expect(first_cinema_movies).to all(be_a Movie)
+      end
 
-    it "first movie object has expected title" do
-      movies_results = @first_cinema.movies.map { |m| m.title }
-      expect(movies_results).to eq ["Little Men", "El clan", "Julieta", "Things to Come", "De Palma"]
+      it "first movie object has expected title" do
+        movies_titles = @first_cinema.movies.map { |m| m.title }
+        expect(movies_titles).to eq ["Little Men", "El clan", "Julieta", "Things to Come", "De Palma"]
+      end
+
+      it "first movie object has expected showtimes" do
+        first_movie_showtimes = @first_cinema.movies.first.showtimes
+        expect(first_movie_showtimes).to be_an Array
+      end
+
     end
 
   end
