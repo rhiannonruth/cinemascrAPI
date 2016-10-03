@@ -15,20 +15,28 @@ class GoogleMoviesScrape
 
   def get_cinema_info(page)
     page.search('.movie_results').search('.theater').map do |cinema|
-      cinema_name = extract_name(cinema)
-      movies = extract_movies_list(cinema)
-      Cinema.new(name: cinema_name, movies:  movies)
+      Cinema.new(name:   extract_cinema_name(cinema), 
+                 movies: extract_movies_list(cinema))
     end
   end
 
-  def extract_name(cinema)
+  def extract_cinema_name(cinema)
     cinema.search('.desc').search('.name').text
   end
 
   def extract_movies_list(cinema)
-    cinema.search('.showtimes').search('.name').map do |movie|
-      movie.text
+    cinema.search('.showtimes').search('.movie').map do |movie|
+      Movie.new(title:     extract_movie_name(movie),
+                showtimes: extract_movie_showtimes(movie))
     end
+  end
+
+  def extract_movie_name(movie)
+    movie.search('.name').text
+  end
+
+  def extract_movie_showtimes(movie)
+    movie.search('.times').text.gsub(' &nbsp', ' ').split(' ')
   end
 
 end
