@@ -18,6 +18,7 @@ RSpec.describe GoogleMoviesScrape, type: :model do
                             body: london_search_page,
                             content_type: "text/html")
       @response = scraper.search_cinemas("London")
+      @first_cinema = @response[:cinemas].first
     end
 
     it "returns hash" do
@@ -28,9 +29,13 @@ RSpec.describe GoogleMoviesScrape, type: :model do
       expect(@response[:cinemas]).to all(be_a Cinema)
     end
 
+    it "first cinema object has expected attributes" do
+      expect(@first_cinema.name).to eq "ICA Cinema"
+      expect(@first_cinema.movies).to eq ["Little Men", "El clan", "Julieta", "Things to Come", "De Palma"]
+    end
+
     it "movies within cinemas are an array" do
-      first_cinema = @response[:cinemas].first
-      expect(first_cinema.movies).to be_an Array
+      expect(@first_cinema.movies).to be_an Array
     end
 
   end
