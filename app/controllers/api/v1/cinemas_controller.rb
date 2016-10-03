@@ -5,7 +5,9 @@ class Api::V1::CinemasController < ApplicationController
   end
 
   def search
-    render json:{cinemas:[]}
+    postcode = params[:postcode]
+    scraper = GoogleMoviesScrape.new
+    render json: scraper.search_cinemas(postcode)
   end
 
 end
