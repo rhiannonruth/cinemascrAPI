@@ -15,13 +15,21 @@ class GoogleMoviesScrape
 
   def get_cinema_info(page)
     page.search('.movie_results').search('.theater').map do |cinema|
-      Cinema.new(name:   extract_cinema_name(cinema), 
-                 movies: extract_movies_list(cinema))
+      Cinema.new(name:      extract_cinema_name(cinema),
+                 address:   extract_cinema_info(cinema, 'address'),
+                 telephone: extract_cinema_info(cinema, 'telephone'),
+                 movies:    extract_movies_list(cinema))
     end
   end
 
   def extract_cinema_name(cinema)
     cinema.search('.desc').search('.name').text
+  end
+
+  def extract_cinema_info(cinema, section)
+    info = cinema.search('.desc').search('.info').text
+    return info.match(/.*(?= -)/).to_s if section == 'address'
+    return info.match(/(?<=- ).*/).to_s if section == 'telephone'
   end
 
   def extract_movies_list(cinema)
