@@ -44,9 +44,13 @@ RSpec.describe GoogleMoviesScrape, type: :model do
         expect(first_cinema_movies).to all(be_a Movie)
       end
 
-      it "movie object has expected title" do
-        movies_titles = @first_cinema.movies.map { |m| m.title }
-        expect(movies_titles).to eq ["Little Men", "El clan", "Julieta", "Things to Come", "De Palma"]
+      it "movie objects have expected attributes" do
+        movies = @first_cinema.movies.map { |m| [m.title, m.length, m.rating] }
+        expect(movies).to eq [["Little Men", "1hr 25min", "UC"],
+                              ["El clan", "1hr 48min", "UC"],
+                              ["Julieta", "1hr 39min", "15"],
+                              ["Things to Come", "1hr 40min", "12A"],
+                              ["De Palma", "1hr 50min", "15"]]
       end
 
       it "movie object has expected showtimes" do
