@@ -21,7 +21,7 @@ RSpec.describe GoogleMoviesScrape, type: :model do
       @first_cinema = @response[:cinemas].first
     end
 
-    it "returns hash" do
+    it "returns hash" , focus: true do
       expect(@response).to be_a Hash
     end
 

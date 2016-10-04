@@ -15,7 +15,7 @@ class GoogleMoviesScrape
 
   def get_cinema_info(page)
     page.search('.movie_results').search('.theater').map do |cinema|
-      Cinema.new(name:   extract_cinema_name(cinema), 
+      Cinema.new(name:   extract_cinema_name(cinema),
                  movies: extract_movies_list(cinema))
     end
   end
@@ -26,9 +26,23 @@ class GoogleMoviesScrape
 
   def extract_movies_list(cinema)
     cinema.search('.showtimes').search('.movie').map do |movie|
-      Movie.new(title:     extract_movie_name(movie),
-                showtimes: extract_movie_showtimes(movie))
+      Movie.new(title:       extract_movie_name(movie),
+                imdb_rating: extract_imdb_rating(movie),
+                showtimes:   extract_movie_showtimes(movie))
     end
+  end
+
+  def extract_imdb_rating(movie)
+    # finds imdb link then uses regex to match actual url
+    imdb_link = movie.search('.//a[text()="IMDb"]/@href').text.match(/(?<=(q=)).*\//).to_s
+    return "unavailable" if imdb_link == ""
+    # creates mechanize page for the imdb page
+    imdb_page = agent.get(imdb_link)
+    # gets rating from page
+    rating = imdb_page.search('//div[@class="ratingValue"]').text.match(/(...)(?=\/)/).to_s
+    # rescue for empty string
+    rating = "unavailable" if rating == ""
+    rating
   end
 
   def extract_movie_name(movie)
