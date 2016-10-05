@@ -31,8 +31,10 @@ RSpec.describe GoogleMoviesScrape, type: :model do
         expect(@response[:cinemas]).to all(be_a Cinema)
       end
 
-      it "cinema object has expected name" do
+      it "cinema object has expected attributes" do
         expect(@first_cinema.name).to eq "ICA Cinema"
+        expect(@first_cinema.address).to eq "The Mall, Institute of Contemporary Arts, London"
+        expect(@first_cinema.telephone).to eq "020 7930 3647"
       end
 
     end
