@@ -20,6 +20,13 @@ RSpec.describe Api::V1::CinemasController, type: :controller do
         expect(json['cinemas'].include?(cinema)).to eq true
       end
     end
+    context 'search for London with imdb rating' do
+      it "success with expected results" do
+        get :search, {location: 'London', imdb: true}
+        json = JSON.parse(response.body)
+        expect(response).to have_http_status(:success)
+      end
+    end
   end
 
 end
