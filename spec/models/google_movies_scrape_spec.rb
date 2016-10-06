@@ -12,11 +12,6 @@ RSpec.describe GoogleMoviesScrape, type: :model do
 
   describe "#search_cinemas" do
     before do
-      london_search_page = File.read("./spec/fixtures/GoogleMoviesLondonSearch.html")
-      FakeWeb.register_uri(:get,
-                            "http://www.google.com/movies?near=London",
-                            body: london_search_page,
-                            content_type: "text/html")
       @response = scraper.search_cinemas("London")
       @first_cinema = @response[:cinemas].first
     end
