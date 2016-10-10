@@ -1,21 +1,21 @@
-## cinemascrAPI
+# cinemascrAPI
 
-An API that screenscrapes google.com/movies and returns cinemas and film listings based on a postcode search.
+> An API that screenscrapes google.com/movies and returns cinemas and film listings based on a postcode search.
 
 [![Build Status](https://travis-ci.org/rhiannonruth/cinemascrAPI.svg?branch=master)](https://travis-ci.org/rhiannonruth/cinemascrAPI)
 [![Coverage Status](https://coveralls.io/repos/github/rhiannonruth/cinemascrAPI/badge.svg?branch=master)](https://coveralls.io/github/rhiannonruth/cinemascrAPI?branch=master)
 [![Code Climate](https://codeclimate.com/github/rhiannonruth/cinemascrAPI/badges/gpa.svg)](https://codeclimate.com/github/rhiannonruth/cinemascrAPI)
 <!-- [![Dependency Status](https://gemnasium.com/badges/github.com/rhiannonruth/cinemascrAPI.svg)](https://gemnasium.com/github.com/rhiannonruth/cinemascrAPI) -->
 
-##### Technology
+### Technology
 Simple Ruby on Rails application, using [Mechanize](https://github.com/sparklemotion/mechanize) and [Nokogiri](http://www.nokogiri.org/) for screen grabbing and HTML parsing. Tested with [RSpec](http://rspec.info/).
 
-#### Installation
+### Installation
 
 - Clone the repo and install dependencies with ```bundle```
 - Run with ```rails s``` and visit ``http://localhost:3000/``
 
-#### Usage
+### Usage
 API call for today's film showings for cinemas based on a postcode search. It will return JSON and there is no authentication.
 
 **Request**
@@ -68,10 +68,10 @@ GET ``/api/v1/cinemas/search?postcode=:postcode``
 }
 ```
 
-#### Note
+### Note
 This is work in progress. We hope to have the option to also return IMDB ratings and potentially other searches.
 
-#### Authors
+### Authors
 - [Rhiannon Lolley Neville](https://github.com/rhiannonruth)
 - [Paul Rees](https://github.com/paulalexrees)
 - [Kevin McCarthy](https://github.com/kevinpmcc)
