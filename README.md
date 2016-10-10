@@ -18,11 +18,11 @@ Simple Ruby on Rails application, using [Mechanize](https://github.com/sparklemo
 ### Usage
 API call for today's film showings for cinemas based on a postcode search. It will return JSON and there is no authentication.
 
-**Request**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Request**
 
-GET ``/api/v1/cinemas/search?postcode=:postcode``
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GET ``/api/v1/cinemas/search?postcode=:postcode``
 
-**Response**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Response**
 ```json
  {
 "cinemas": [
