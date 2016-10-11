@@ -32,9 +32,10 @@ RSpec.describe GoogleMoviesScrape, type: :model do
       end
 
       it "cinema object has expected attributes" do
-        expect(@first_cinema.name).to eq "ICA Cinema"
-        expect(@first_cinema.address).to eq "The Mall, Institute of Contemporary Arts, London"
-        expect(@first_cinema.telephone).to eq "020 7930 3647"
+        first_two_cinemas = @response[:cinemas].map { |c| [c.name, c.address, c.telephone] }.first(2)
+        cinema_one = ["ICA Cinema", "The Mall, Institute of Contemporary Arts, London", "020 7930 3647"]
+        cinema_two = ["Everyman Canary Wharf", "Canary Wharf, Crossrail Place - Level Minus Two, London, United Kingdom", "0871 906 9060"]
+        expect(first_two_cinemas).to eq [cinema_one, cinema_two]
       end
 
     end

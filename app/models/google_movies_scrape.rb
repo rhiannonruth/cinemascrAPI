@@ -29,7 +29,7 @@ class GoogleMoviesScrape
   def extract_cinema_info(cinema, section)
     info = cinema.search('.desc').search('.info').text
     return info.match(/.*(?= -)/).to_s if section == 'address'
-    return info.match(/(?<=- ).*/).to_s if section == 'telephone'
+    return info.match(/[0-9 ]{14}$/).to_s.strip if section == 'telephone'
   end
 
   def extract_movies_list(cinema)
