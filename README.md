@@ -10,7 +10,7 @@
 <!-- [![Dependency Status](https://gemnasium.com/badges/github.com/rhiannonruth/cinemascrAPI.svg)](https://gemnasium.com/github.com/rhiannonruth/cinemascrAPI) -->
 
 ### Technology
-Simple Ruby on Rails application, using [Mechanize](https://github.com/sparklemotion/mechanize) and [Nokogiri](http://www.nokogiri.org/) for screen grabbing and HTML parsing. Tested with [RSpec](http://rspec.info/).
+Simple [Ruby on Rails](http://rubyonrails.org/) application, using [Mechanize](https://github.com/sparklemotion/mechanize) and [Nokogiri](http://www.nokogiri.org/) for screen grabbing and HTML parsing. Tested with [RSpec](http://rspec.info/).
 
 ### Installation
 
