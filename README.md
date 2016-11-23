@@ -1,5 +1,7 @@
 # cinemascrAPI
 
+### As of November 1st 2016 this is no longer working as google/movies has been discontinued.
+
 > An API that screenscrapes google.com/movies and returns cinemas and film listings based on a postcode search.
 
 [![Build Status](https://travis-ci.org/rhiannonruth/cinemascrAPI.svg?branch=master)](https://travis-ci.org/rhiannonruth/cinemascrAPI)
@@ -8,7 +10,7 @@
 <!-- [![Dependency Status](https://gemnasium.com/badges/github.com/rhiannonruth/cinemascrAPI.svg)](https://gemnasium.com/github.com/rhiannonruth/cinemascrAPI) -->
 
 ### Technology
-Simple Ruby on Rails application, using [Mechanize](https://github.com/sparklemotion/mechanize) and [Nokogiri](http://www.nokogiri.org/) for screen grabbing and HTML parsing. Tested with [RSpec](http://rspec.info/).
+Simple [Ruby on Rails](http://rubyonrails.org/) application, using [Mechanize](https://github.com/sparklemotion/mechanize) and [Nokogiri](http://www.nokogiri.org/) for screen grabbing and HTML parsing. Tested with [RSpec](http://rspec.info/).
 
 ### Installation
 
