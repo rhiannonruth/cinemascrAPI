@@ -7,6 +7,8 @@
 [![Code Climate](https://codeclimate.com/github/rhiannonruth/cinemascrAPI/badges/gpa.svg)](https://codeclimate.com/github/rhiannonruth/cinemascrAPI)
 <!-- [![Dependency Status](https://gemnasium.com/badges/github.com/rhiannonruth/cinemascrAPI.svg)](https://gemnasium.com/github.com/rhiannonruth/cinemascrAPI) -->
 
+## As of November 1st 2016 this is no longer working as google/movies has been discontinued.
+
 ### Technology
 Simple Ruby on Rails application, using [Mechanize](https://github.com/sparklemotion/mechanize) and [Nokogiri](http://www.nokogiri.org/) for screen grabbing and HTML parsing. Tested with [RSpec](http://rspec.info/).
 
